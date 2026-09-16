@@ -93,7 +93,13 @@ myMutableArray.append(myImmutableArray[1])
 // array stores, the array still holds the same reference the whole time.
 
 //: 5. What happens if you modify the `String` element in the second array (for example, if you append a word to it)? Will the second element in the first array also change, or stay the same? Explain why.
-//: 1. Create an immutable empty array of type `[Int]` without any literals, using the name of the class (`Array`) and the standard initializer for generic types (`var value = ClassName<GenericType>()`)
+
+myMutableArray[0] += "!"
+// myImmutableArray[1] stays "Banana", it does not change. String is a value type, so appending it
+// into myMutableArray copied the value in, it did not share a reference to the original. Mutating
+// myMutableArray[0] only touches that independent copy.
+
+//: 6. Create an immutable empty array of type `[Int]` without any literals, using the name of the class (`Array`) and the standard initializer for generic types (`var value = ClassName<GenericType>()`)
 
 //: Dictionaries
 //: 1. Create a mutable empty Dictionary of type `[String: Double]`
