@@ -39,6 +39,11 @@ var myFloat: Float = 42.5
 
 //: 5. Declare an uninitialized constant with type `String`. Will you ever be able to assign a value to this constant?
 
+let myUninitializedString: String
+// Yes, once. Swift lets a let constant skip its initial value as long as it gets assigned exactly
+// once before it's ever read. The compiler checks every code path for this, so it's still fully safe.
+myUninitializedString = "Value assigned"
+
 //: ### Strings and String interpolation
 //: 1. Create a constant of type `String` containing the text `"This is a String."`.
 //: 1. Create a mutable String with `"This is an Int: "` as its initial value.
