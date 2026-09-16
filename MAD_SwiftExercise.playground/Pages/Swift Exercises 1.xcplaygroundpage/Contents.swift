@@ -59,7 +59,10 @@ let myIntForString = 42
 myMutableString += String(myIntForString)
 
 //: 4. Create another constant containing the same string, but this time use a string literal and string interpolation (the `\()` syntax) to create it.
-//: 1. Create a multiline string using the multiline string literal.
+
+let myInterpolatedString = "This is an Int: \(myIntForString)"
+
+//: 5. Create a multiline string using the multiline string literal.
 
 //: ### Arrays and Dictionaries
 //: Arrays
