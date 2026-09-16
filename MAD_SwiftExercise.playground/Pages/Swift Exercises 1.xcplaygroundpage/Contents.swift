@@ -29,8 +29,11 @@ var myInt = 42
 
 let myConstantInt = 42
 
-//: 1. Declare a variable with value `42.5`. What type does it have?
-//: 1. Declare a variable with explicit type `Float` and value `42.5`.
+//: 3. Declare a variable with value `42.5`. What type does it have?
+
+var myDouble = 42.5 // Inferred as Double, Swift's default type for floating-point literals.
+
+//: 4. Declare a variable with explicit type `Float` and value `42.5`.
 //: 1. Declare an uninitialized constant with type `String`. Will you ever be able to assign a value to this constant?
 
 //: ### Strings and String interpolation
