@@ -396,3 +396,27 @@ student1.firstName = "Anne"
 //: 1. Iterate over the objects in the array and print out their names.
 //: 1. Create a protocol extension for `NamedThing` that contains a new computed property of type `String` called `initial`. Add a default implementation in your protocol extension, which returns the first character of the `name` property, or, if `name` is empty, an empty string.
 //: 1. Print the new `initials` property in the loop you created above.
+
+protocol NamedThing {
+    var name: String { get }
+}
+
+extension Person: NamedThing {}
+extension Pet: NamedThing {}
+
+let namedThings: [NamedThing] = [pet1, pet2, pet3, student1, student2, student3]
+
+extension NamedThing {
+    var initial: String {
+        if let firstCharacter = name.first {
+            return String(firstCharacter)
+        } else {
+            return ""
+        }
+    }
+}
+
+for namedThing in namedThings {
+    print(namedThing.name)
+    print(namedThing.initial)
+}
