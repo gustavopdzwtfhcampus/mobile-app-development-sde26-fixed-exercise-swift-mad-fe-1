@@ -154,6 +154,19 @@ struct MyStruct {
 
 var instance: MyStruct? = MyStruct()
 
+instance?.anOptionalInt = 10
+// If instance were nil, this line would simply do nothing, no crash. Optional chaining short-circuits,
+// the whole expression evaluates to nil and the assignment is skipped entirely.
+
+if let currentOptionalInt = instance?.anOptionalInt {
+    print(currentOptionalInt)
+}
+// If instance or anOptionalInt were nil, the chain instance?.anOptionalInt evaluates to nil, so the
+// if let condition fails and the body is skipped, again with no crash.
+
+instance?.sayHelloWorld()
+// If instance were nil, the call is simply skipped, nothing happens, no crash.
+
 //: ### Control flow
 //: 1. Write a `for-in` loop that sums up all the values in `myNumbers`.
 //: 1. Create an empty mutable `[Int: Int]` dictionary. Use a `for-in` loop to iterate over the elements in `myNumbers` and add each value to the dictionary, using the index of each element in `myNumbers` as its key. So for example, the dictionary should contain the key/value pair `0:12`, because 12 is element 0 of `myNumbers`.
