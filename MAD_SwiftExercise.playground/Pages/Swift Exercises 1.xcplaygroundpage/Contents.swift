@@ -64,6 +64,12 @@ let myInterpolatedString = "This is an Int: \(myIntForString)"
 
 //: 5. Create a multiline string using the multiline string literal.
 
+let myMultilineString = """
+This is
+a multiline
+string.
+"""
+
 //: ### Arrays and Dictionaries
 //: Arrays
 //: 1. Create an immutable array and initialize it with an array literal containing 3 `String` elements
