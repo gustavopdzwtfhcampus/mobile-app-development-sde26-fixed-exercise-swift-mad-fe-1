@@ -192,6 +192,37 @@ for (index, number) in myNumbers.enumerated() {
 //: 1. Declare a function with a default parameter value. Call the function twice, once with the argument present, once without.
 //: 1. Declare a function with name `callAFunction` that takes another function as parameter and then executes it. Call your newly declared `callAFunction` and pass in one of the functions you previously declared.
 
+func sayHello() {
+    print("Hello World")
+}
+sayHello()
+
+func combineWords(first: String, second: String) -> String {
+    return first + " " + second
+}
+combineWords(first: "Hello", second: "World")
+
+func combineWordsNoFirstLabel(_ first: String, second: String) -> String {
+    return first + " " + second
+}
+combineWordsNoFirstLabel("Hello", second: "World")
+
+func combineWordsCustomLabel(with first: String, second: String) -> String {
+    return first + " " + second
+}
+combineWordsCustomLabel(with: "Hello", second: "World")
+
+func greet(name: String = "World") -> String {
+    return "Hello, \(name)!"
+}
+greet()
+greet(name: "Swift")
+
+func callAFunction(_ function: () -> Void) {
+    function()
+}
+callAFunction(sayHello)
+
 //: Closures
 //: 1. Create an optional variable that holds a closure (with a `String` parameter and no return type) and assign `nil`.
 //: 1. Call the closure using optional chaining. What will happen?
