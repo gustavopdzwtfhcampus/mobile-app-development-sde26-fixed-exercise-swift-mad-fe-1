@@ -105,7 +105,10 @@ let myEmptyIntArray = Array<Int>()
 
 //: Dictionaries
 //: 1. Create a mutable empty Dictionary of type `[String: Double]`
-//: 1. Set the value for the key `"Answer to Life, the Universe and Everything"` to `42`.
+
+var myDictionary: [String: Double] = [:]
+
+//: 2. Set the value for the key `"Answer to Life, the Universe and Everything"` to `42`.
 
 //: ### Optionals
 //: 1. Create an optional `String` variable and assign a non-nil value of your choice
