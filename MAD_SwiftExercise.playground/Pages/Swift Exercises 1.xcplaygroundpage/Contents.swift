@@ -73,7 +73,10 @@ string.
 //: ### Arrays and Dictionaries
 //: Arrays
 //: 1. Create an immutable array and initialize it with an array literal containing 3 `String` elements
-//: 1. Create an empty mutable array of type `[String]`
+
+let myImmutableArray = ["Apple", "Banana", "Kiwi"]
+
+//: 2. Create an empty mutable array of type `[String]`
 //: 1. Append the second element of the first (immutable) array to the second (mutable) array.
 //: 1. Can you modify one of the `String` elements in the first array (for example, append a word to it)? Why/why not? What if the elements were not of type `String`, but instead of a class?
 //: 1. What happens if you modify the `String` element in the second array (for example, if you append a word to it)? Will the second element in the first array also change, or stay the same? Explain why.
