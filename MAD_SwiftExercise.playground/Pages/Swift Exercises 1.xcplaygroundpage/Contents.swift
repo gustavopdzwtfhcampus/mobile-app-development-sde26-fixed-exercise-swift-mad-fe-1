@@ -110,6 +110,8 @@ var myDictionary: [String: Double] = [:]
 
 //: 2. Set the value for the key `"Answer to Life, the Universe and Everything"` to `42`.
 
+myDictionary["Answer to Life, the Universe and Everything"] = 42
+
 //: ### Optionals
 //: 1. Create an optional `String` variable and assign a non-nil value of your choice
 //: 1. Print the String on the console. Make sure the variable is first unwrapped and only the actual value is printed. You may either force-unwrap the string or use an `if let` construct.
