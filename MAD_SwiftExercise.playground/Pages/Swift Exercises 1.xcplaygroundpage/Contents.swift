@@ -22,6 +22,9 @@ print("Hello, World!") // This works because Swift programs by default execute s
 //: ## Exercises
 //: ### Variables and Constants
 //: 1. Declare a variable with value `42` that is implicitly assigned type `Int`.
+
+var myInt = 42
+
 //: 1. Declare a constant with value `42` that is implicitly assigned type `Int`.
 //: 1. Declare a variable with value `42.5`. What type does it have?
 //: 1. Declare a variable with explicit type `Float` and value `42.5`.
