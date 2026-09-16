@@ -251,6 +251,30 @@ callAClosure(closure: { (item1: String, item2: String) -> String in
     return "\(item1) \(item2)"
 })
 
+// Simplification 1: omit closure parameter types, inferred from callAClosure's declared parameter type.
+callAClosure(closure: { (item1, item2) -> String in
+    return "\(item1) \(item2)"
+})
+
+// Simplification 2: also omit the closure return type, inferred the same way.
+callAClosure(closure: { (item1, item2) in
+    return "\(item1) \(item2)"
+})
+
+// Simplification 3: also omit the parentheses and argument label, using trailing closure syntax.
+callAClosure { (item1, item2) in
+    return "\(item1) \(item2)"
+}
+
+// Simplification 4: also omit the parameter list, using the shorthand argument names $0 and $1.
+callAClosure {
+    return "\($0) \($1)"
+}
+
+// Simplification 5: also omit the return keyword, since a single-expression closure body is implicit.
+callAClosure {
+    "\($0) \($1)"
+}
 
 //: ### Classes
 //: 1. Create a new class named `Person`. Add non-optional `firstName` and `lastName` properties and an initializer.
