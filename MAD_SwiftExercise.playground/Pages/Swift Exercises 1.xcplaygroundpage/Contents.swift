@@ -46,7 +46,10 @@ myUninitializedString = "Value assigned"
 
 //: ### Strings and String interpolation
 //: 1. Create a constant of type `String` containing the text `"This is a String."`.
-//: 1. Create a mutable String with `"This is an Int: "` as its initial value.
+
+let myStringConstant: String = "This is a String."
+
+//: 2. Create a mutable String with `"This is an Int: "` as its initial value.
 //: 1. Create an `Int` constant with value 42 and append it to the mutable string, resulting in the value: `"This is an Int: 42"`.
 //: 1. Create another constant containing the same string, but this time use a string literal and string interpolation (the `\()` syntax) to create it.
 //: 1. Create a multiline string using the multiline string literal.
