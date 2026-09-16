@@ -114,10 +114,30 @@ myDictionary["Answer to Life, the Universe and Everything"] = 42
 
 //: ### Optionals
 //: 1. Create an optional `String` variable and assign a non-nil value of your choice
-//: 1. Print the String on the console. Make sure the variable is first unwrapped and only the actual value is printed. You may either force-unwrap the string or use an `if let` construct.
-//: 1. What happens if you force-unwrap an optional variable that contains `nil`?
-//: 1. Create another optional `String` variable and asign the value `nil`. Use the nil coalescing operator (`??`) to print the first unwrapped String from above.
-//: 1. Do the same thing again, but this time use the ternary conditional operator `(a ? b : c)`.
+
+var myOptionalString: String? = "Hello, Optional!"
+
+//: 2. Print the String on the console. Make sure the variable is first unwrapped and only the actual value is printed. You may either force-unwrap the string or use an `if let` construct.
+
+if let unwrappedString = myOptionalString {
+    print(unwrappedString)
+}
+
+//: 3. What happens if you force-unwrap an optional variable that contains `nil`?
+// The app crashes at runtime with a fatal error, something like "Unexpectedly found nil while
+// unwrapping an Optional value". Force-unwrapping with `!` tells the compiler "trust me, there's
+// definitely a value in here", so if that promise turns out to be false, the program terminates
+// immediately instead of continuing with invalid data. This is a deliberate design choice, Swift
+// would rather crash loudly and immediately than silently proceed with a missing value.
+
+//: 4. Create another optional `String` variable and asign the value `nil`. Use the nil coalescing operator (`??`) to print the first unwrapped String from above.
+
+var anotherOptionalString: String? = nil
+print(anotherOptionalString ?? myOptionalString!)
+
+//: 5. Do the same thing again, but this time use the ternary conditional operator `(a ? b : c)`.
+
+print(anotherOptionalString != nil ? anotherOptionalString! : myOptionalString!)
 
 //: Optional chaining
 //: 1. Consider the following `struct`. Use optional chaining to change the value of `anOptionalInt` in `instance` to a new value of your choice in a single line of code. What would happen if we executed that line while `instance` is `nil`?
