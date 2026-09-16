@@ -25,7 +25,10 @@ print("Hello, World!") // This works because Swift programs by default execute s
 
 var myInt = 42
 
-//: 1. Declare a constant with value `42` that is implicitly assigned type `Int`.
+//: 2. Declare a constant with value `42` that is implicitly assigned type `Int`.
+
+let myConstantInt = 42
+
 //: 1. Declare a variable with value `42.5`. What type does it have?
 //: 1. Declare a variable with explicit type `Float` and value `42.5`.
 //: 1. Declare an uninitialized constant with type `String`. Will you ever be able to assign a value to this constant?
