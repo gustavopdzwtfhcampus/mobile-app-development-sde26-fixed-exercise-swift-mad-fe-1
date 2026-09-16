@@ -228,6 +228,15 @@ callAFunction(sayHello)
 //: 1. Call the closure using optional chaining. What will happen?
 //: 1. Create a `typealias` for this type of closure.
 
+var myOptionalClosure: ((String) -> Void)? = nil
+
+myOptionalClosure?("Hello")
+// Since myOptionalClosure is nil, this call is skipped entirely, nothing happens, no crash. Optional
+// chaining applies to calling an optional closure just like it does for optional methods and properties.
+
+typealias StringClosure = (String) -> Void
+var myTypedOptionalClosure: StringClosure? = nil
+
 //: 1. Take a look at the following function, which takes a closure as parameter and calls it. This function is then called. For each of the following exercises, call the function again, but each time use one more simplification:
 //:   * Omit closure parameter types.
 //:   * Omit the closure return type
