@@ -284,6 +284,45 @@ callAClosure {
 //: 1. Add a `Float?` optional property called `grade`. Use the `didSet` property observer to make sure that the grade is not lower than 1.0 and not higher than 5.0 after it was set. Clamp the new value to this interval - so if a value higher than 5.0 is set, set it to 5.0 afterwards. If a value lower than 1.0 is set, set it to 1.0 afterwards.
 //: 1. Override the `greet` function from the superclass. If the `grade` property is set, it should now return `"Hi, I'm \(name). My grade is: \(grade)"`. If the `grade property isn't set, return the superclass's implementation.
 
+class Person {
+    var firstName: String
+    var lastName: String
+
+    init(firstName: String, lastName: String) {
+        self.firstName = firstName
+        self.lastName = lastName
+    }
+
+    var name: String {
+        return "\(firstName) \(lastName)"
+    }
+
+    func greet() -> String {
+        return "Hi, I'm \(name)."
+    }
+}
+
+class Student: Person {
+    var grade: Float? {
+        didSet {
+            if let currentGrade = grade {
+                if currentGrade > 5.0 {
+                    grade = 5.0
+                } else if currentGrade < 1.0 {
+                    grade = 1.0
+                }
+            }
+        }
+    }
+
+    override func greet() -> String {
+        if let currentGrade = grade {
+            return "Hi, I'm \(name). My grade is: \(currentGrade)"
+        }
+        return super.greet()
+    }
+}
+
 //: ### Enums and Structs
 //: 1. Create an enum named `PetType` with cases `dog` and `cat`
 //: 1. In your new enum, create a function or computed property named `animalSound` that returns a `String`. Use a `switch` statement on `self` to differentiate between the cases and return `"woof"` for the `.dog` case and `"meow"` for the `.cat` case.
