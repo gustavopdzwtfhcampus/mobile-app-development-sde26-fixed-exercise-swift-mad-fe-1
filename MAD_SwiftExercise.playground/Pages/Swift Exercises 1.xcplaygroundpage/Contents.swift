@@ -101,6 +101,8 @@ myMutableArray[0] += "!"
 
 //: 6. Create an immutable empty array of type `[Int]` without any literals, using the name of the class (`Array`) and the standard initializer for generic types (`var value = ClassName<GenericType>()`)
 
+let myEmptyIntArray = Array<Int>()
+
 //: Dictionaries
 //: 1. Create a mutable empty Dictionary of type `[String: Double]`
 //: 1. Set the value for the key `"Answer to Life, the Universe and Everything"` to `42`.
