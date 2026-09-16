@@ -335,6 +335,60 @@ class Student: Person {
 //: 1. Change one of the names of the students in your array. Does this change the name of any of the students stored in the `let` constants? Explain why/why not.
 //: 1. Can you change the name of one of the students stored in the `let` constants? Explain why/why not.
 
+enum PetType {
+    case dog
+    case cat
+
+    var animalSound: String {
+        switch self {
+        case .dog:
+            return "woof"
+        case .cat:
+            return "meow"
+        }
+    }
+}
+
+struct Pet {
+    var name: String
+    let type: PetType
+
+    func makeNoise() -> String {
+        return type.animalSound
+    }
+}
+
+let pet1 = Pet(name: "Rex", type: .dog)
+let pet2 = Pet(name: "Whiskers", type: .cat)
+let pet3 = Pet(name: "Fido", type: .dog)
+var petsArray = [pet1, pet2, pet3]
+
+petsArray[0].name = "Max"
+// pet1.name stays "Rex". Pet is a struct, a value type, so petsArray holds independent copies of
+// pet1, pet2, and pet3, not references to them. Mutating an element in the array only affects that
+// array's own copy and has no effect on the original let constants.
+
+// pet1.name = "Buddy" // Would not compile. pet1 is a let constant, so none of its properties can be
+// reassigned, even though name is declared var inside the struct. let fixes the whole value, property
+// mutability only matters once you have a var instance to work with in the first place.
+
+let student1 = Student(firstName: "Anna", lastName: "Smith")
+let student2 = Student(firstName: "Ben", lastName: "Jones")
+let student3 = Student(firstName: "Cara", lastName: "Lee")
+var studentsArray = [student1, student2, student3]
+
+studentsArray[0].firstName = "Annabelle"
+// student1.firstName also changes to "Annabelle". Student is a class, a reference type, so
+// studentsArray holds the very same underlying instances as student1, student2, and student3, not
+// copies. Mutating a property through the array mutates the one shared object, visible from every
+// reference to it, including student1.
+
+student1.firstName = "Anne"
+// This compiles and works, even though student1 is a let constant. let only fixes what object the
+// constant refers to, it cannot be reassigned to point at a different Student. It does not freeze the
+// object's own properties, firstName is declared var inside Person, so it can still be mutated through
+// any reference to that object, including a let one.
+
 //: ### Protocols and extensions
 //: 1. Create a protocol called `NamedThing`. Add a `get` variable of type `String`, with the name `name`.
 //: 1. Use extensions to make your `Person` class and `Pet` structs from above conform to the new protocol.
