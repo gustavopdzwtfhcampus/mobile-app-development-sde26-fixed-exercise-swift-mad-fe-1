@@ -173,6 +173,16 @@ instance?.sayHelloWorld()
 
 let myNumbers = [12, 23, 1, 104]
 
+var myNumbersSum = 0
+for number in myNumbers {
+    myNumbersSum += number
+}
+
+var myNumbersDictionary: [Int: Int] = [:]
+for (index, number) in myNumbers.enumerated() {
+    myNumbersDictionary[index] = number
+}
+
 //: ### Functions and Closures
 //: Functions
 //: 1. Declare and call a function without any parameters or return type that prints Hello World.
