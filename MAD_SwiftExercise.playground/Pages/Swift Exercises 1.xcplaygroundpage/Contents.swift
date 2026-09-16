@@ -54,7 +54,11 @@ let myStringConstant: String = "This is a String."
 var myMutableString = "This is an Int: "
 
 //: 3. Create an `Int` constant with value 42 and append it to the mutable string, resulting in the value: `"This is an Int: 42"`.
-//: 1. Create another constant containing the same string, but this time use a string literal and string interpolation (the `\()` syntax) to create it.
+
+let myIntForString = 42
+myMutableString += String(myIntForString)
+
+//: 4. Create another constant containing the same string, but this time use a string literal and string interpolation (the `\()` syntax) to create it.
 //: 1. Create a multiline string using the multiline string literal.
 
 //: ### Arrays and Dictionaries
