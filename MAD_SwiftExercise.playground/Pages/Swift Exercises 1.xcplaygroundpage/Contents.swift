@@ -34,7 +34,10 @@ let myConstantInt = 42
 var myDouble = 42.5 // Inferred as Double, Swift's default type for floating-point literals.
 
 //: 4. Declare a variable with explicit type `Float` and value `42.5`.
-//: 1. Declare an uninitialized constant with type `String`. Will you ever be able to assign a value to this constant?
+
+var myFloat: Float = 42.5
+
+//: 5. Declare an uninitialized constant with type `String`. Will you ever be able to assign a value to this constant?
 
 //: ### Strings and String interpolation
 //: 1. Create a constant of type `String` containing the text `"This is a String."`.
